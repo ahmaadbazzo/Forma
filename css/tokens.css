@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Design tokens — single source of truth for the Forma CV design system.
+   Everything in the app UI reads from these variables (light / dark).
+   The CV paper itself is NOT themed: it is always white, print-safe.
+   ========================================================================== */
+:root {
+  /* Brand */
+  --brand-50: #e9f6f2;
+  --brand-100: #cfece4;
+  --brand-300: #6fc2ad;
+  --brand-500: #1a8f79;
+  --brand-600: #157a67;
+  --brand-700: #106153;
+  --brand-ink: #ffffff;
+
+  /* Neutrals (light) */
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --surface-2: #f1f3f0;
+  --surface-3: #e8ebe7;
+  --border: #dfe4de;
+  --border-strong: #c5ccc4;
+  --text: #17211d;
+  --text-2: #4a5851;
+  --text-3: #6b7870;     /* >= 4.5:1 on --bg / --surface */
+  --focus: #0b6bcb;
+
+  /* Status */
+  --ok: #17803d;       --ok-bg: #e6f4ea;
+  --warn: #a15c07;     --warn-bg: #fdf1dc;
+  --danger: #c2321f;   --danger-bg: #fdeae6;
+  --info: #1d5fb4;     --info-bg: #e5eefb;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgb(20 35 28 / .06), 0 1px 1px rgb(20 35 28 / .04);
+  --shadow-2: 0 4px 14px rgb(20 35 28 / .08), 0 1px 3px rgb(20 35 28 / .06);
+  --shadow-3: 0 18px 50px rgb(20 35 28 / .18), 0 4px 14px rgb(20 35 28 / .08);
+  --scrim: rgb(14 22 18 / .52);
+
+  /* Shape */
+  --r-xs: 4px; --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-xl: 20px; --r-full: 999px;
+
+  /* Spacing (4px base) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px;
+  --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px; --s-20: 80px;
+
+  /* Type */
+  --font-ui: 'Inter', 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', 'Cairo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-xs: .75rem; --fs-sm: .8125rem; --fs-md: .9375rem; --fs-lg: 1.0625rem;
+  --fs-xl: 1.25rem; --fs-2xl: 1.5rem; --fs-3xl: 2rem; --fs-4xl: clamp(2.2rem, 5.2vw, 3.7rem);
+
+  /* Motion */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --t-fast: 120ms; --t-med: 200ms; --t-slow: 320ms;
+
+  /* Layout */
+  --topbar-h: 60px;
+  --bottomnav-h: 64px;
+  --tap: 44px;               /* minimum touch target */
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --brand-50: #12302a;
+  --brand-100: #17433a;
+  --brand-300: #4aa892;
+  --brand-500: #3fb59c;
+  --brand-600: #35a58d;
+  --brand-700: #7fd3bf;
+  --brand-ink: #06231c;
+
+  --bg: #0e1311;
+  --surface: #161d1a;
+  --surface-2: #1d2622;
+  --surface-3: #26312c;
+  --border: #2a3630;
+  --border-strong: #3b4a43;
+  --text: #ecf1ee;
+  --text-2: #b6c2bb;
+  --text-3: #93a39a;
+  --focus: #6cb2ff;
+
+  --ok: #5ccf86;       --ok-bg: #12301f;
+  --warn: #f0b95a;     --warn-bg: #36280d;
+  --danger: #ff8b78;   --danger-bg: #3a1a15;
+  --info: #86b6f5;     --info-bg: #14283f;
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / .4);
+  --shadow-2: 0 6px 18px rgb(0 0 0 / .4);
+  --shadow-3: 0 22px 60px rgb(0 0 0 / .6);
+  --scrim: rgb(0 0 0 / .64);
+  color-scheme: dark;
+}
+
+:root[lang="ar"] {
+  --font-ui: 'Cairo', 'Inter', system-ui, 'Segoe UI', Tahoma, sans-serif;
+  --font-display: 'Cairo', 'Inter', system-ui, 'Segoe UI', Tahoma, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t-med: 0ms; --t-slow: 0ms; }
+}

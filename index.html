@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f5">
+  <meta name="description" content="Forma CV — create a polished, ATS-friendly CV in Arabic or English. Private by design: your data stays on your device.">
+  <title>Forma CV | Resume builder</title>
+  <script>
+    /* Apply theme + direction before first paint (no flash). */
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('forma:v2:prefs') || '{}');
+        var theme = p.theme || 'system';
+        var dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        var lang = p.uiLang || ((navigator.language || '').slice(0, 2) === 'ar' ? 'ar' : 'en');
+        document.documentElement.lang = lang; document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      } catch (e) { document.documentElement.dataset.theme = 'light'; }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/cv.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-skip>Skip to content</a>
+  <div id="app"></div>
+  <div id="modal-root"></div>
+  <div id="toasts" class="toasts" role="region" aria-label="Notifications"></div>
+  <div id="sr-live" class="visually-hidden" role="status" aria-live="polite"></div>
+  <div id="print-root" aria-hidden="true"></div>
+  <noscript><p style="padding:24px;font-family:system-ui">Forma CV needs JavaScript to run. / يحتاج التطبيق إلى تفعيل JavaScript.</p></noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/core/util.js"></script>
+  <script src="js/core/icons.js"></script>
+  <script src="js/core/strings.js"></script>
+  <script src="js/core/i18n.js"></script>
+  <script src="js/cv/schema.js"></script>
+  <script src="js/cv/templates.js"></script>
+  <script src="js/cv/sample.js"></script>
+  <script src="js/cv/render.js"></script>
+  <script src="js/cv/skillbank.js"></script>
+  <script src="js/cv/analysis.js"></script>
+  <script src="js/cv/matcher.js"></script>
+  <script src="js/cv/thumb.js"></script>
+  <script src="js/cv/io.js"></script>
+  <script src="js/ai/ai.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/state.js"></script>
+  <script src="js/core/ui.js"></script>
+  <script src="js/views/shared.js"></script>
+  <script src="js/views/landing.js"></script>
+  <script src="js/views/onboarding.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/export.js"></script>
+  <script src="js/views/editor.js"></script>
+  <script src="js/views/panels.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* Print / Save-as-PDF: only #print-root is shown, A4, zero page margin (the CV supplies its own padding). */
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; block-size: auto !important; overflow: visible !important; }
+  body > *:not(#print-root) { display: none !important; }
+  #print-root { display: block !important; position: static !important; inline-size: 210mm; margin: 0; padding: 0; }
+  #print-root .cv { inline-size: 210mm !important; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
